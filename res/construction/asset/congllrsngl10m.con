@@ -1,3 +1,4 @@
+local constructionHelpers = require('lenz_italian_fs_assets.constructionHelpers')
 local constructionutil = require "constructionutil"
 
 function data()
@@ -17,17 +18,17 @@ return {
 	skipCollision = true,
 	autoRemovable = false,
 	updateFn = function(params)
-		local result = { }
-
-		result.models = { {
-			id = "asset/mdlgllrsngl10m.mdl",
-			transf = constructionutil.rotateTransf(params, { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1 }),
-		} }
-
-	result.terrainAlignmentLists = { {
-			type = "EQUAL",
-			faces =  { }
-		} }
+		local result = {
+			groundFaces = constructionHelpers.getDummyGroundFaces(),
+			models = { {
+				id = "asset/mdlgllrsngl10m.mdl",
+				transf = constructionutil.rotateTransf(params, { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1 }),
+			} },
+			terrainAlignmentLists = { {
+				type = "EQUAL",
+				faces =  { }
+			} },
+		}
     	return result
 	end
 }
