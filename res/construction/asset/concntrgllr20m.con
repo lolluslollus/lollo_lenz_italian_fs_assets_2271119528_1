@@ -2,8 +2,9 @@ local constructionHelpers = require('lenz_italian_fs_assets.constructionHelpers'
 local constructionutil = require "constructionutil"
 
 function data()
-	return { 
-		type = "ASSET_DEFAULT",
+	return {
+		type = 'ASSET_TRACK',
+		-- type = "ASSET_DEFAULT",
 		description = {
 			name = _("Controgallerie 20m"),			
 			description = _("Separated Tunnels, 20m block")

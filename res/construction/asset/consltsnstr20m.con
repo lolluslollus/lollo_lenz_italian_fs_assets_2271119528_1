@@ -2,35 +2,34 @@ local constructionHelpers = require('lenz_italian_fs_assets.constructionHelpers'
 local constructionutil = require "constructionutil"
 
 function data()
-
-return { 
-	type = "ASSET_DEFAULT",
-	description = {
-		name = _("Salita Sinistra 20m"),
-		description = _("Left Wall End 20m")
-	},
-	availability = {
-		yearFrom = 1850,
-	},
-	buildMode = "MULTI",
-	categories = { "FSassets" },
-	order = 105,
-	skipCollision = true,
-	autoRemovable = false,
-	updateFn = function(params)
-		local result = {
-			groundFaces = constructionHelpers.getDummyGroundFaces(),
-			models = { {
-				id = "asset/mdlsltsnstr20m.mdl",
-				transf = constructionutil.rotateTransf(params, { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1 }),
-			} },
-			terrainAlignmentLists = { {
-				type = "EQUAL",
-				faces =  { }
-			} },
-		}
-    	return result
-	end
-}
-
+	return {
+		type = 'ASSET_TRACK',
+		-- type = "ASSET_DEFAULT",
+		description = {
+			name = _("Salita Sinistra 20m"),
+			description = _("Left Wall End 20m")
+		},
+		availability = {
+			yearFrom = 1850,
+		},
+		buildMode = "MULTI",
+		categories = { "FSassets" },
+		order = 105,
+		skipCollision = true,
+		autoRemovable = false,
+		updateFn = function(params)
+			local result = {
+				groundFaces = constructionHelpers.getDummyGroundFaces(),
+				models = { {
+					id = "asset/mdlsltsnstr20m.mdl",
+					transf = constructionutil.rotateTransf(params, { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1 }),
+				} },
+				terrainAlignmentLists = { {
+					type = "EQUAL",
+					faces =  { }
+				} },
+			}
+			return result
+		end
+	}
 end
