@@ -12,6 +12,10 @@ function data()
 					name = "Lenz",
 					role = "CREATOR",
 				},
+				{
+					name = "lollus",
+					role = "CREATOR",
+				},
 			},
 			visible = true,
 		},
