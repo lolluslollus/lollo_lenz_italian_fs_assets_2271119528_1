@@ -1,5 +1,4 @@
 local constructionHelpers = require('lenz_italian_fs_assets.constructionHelpers')
-local constructionutil = require "constructionutil"
 
 function data()
 	return {
@@ -12,7 +11,7 @@ function data()
 		availability = {
 			yearFrom = 1850,
 		},
-		buildMode = "MULTI",
+		buildMode = "SINGLE",
 		categories = { "FSassets" },
 		order = 105,
 		skipCollision = true,
@@ -22,12 +21,9 @@ function data()
 				groundFaces = constructionHelpers.getDummyGroundFaces(),
 				models = { {
 					id = "asset/mdlgllrsngl10m.mdl",
-					transf = constructionutil.rotateTransf(params, { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1 }),
+					transf = constructionHelpers.idTransf(),
 				} },
-				terrainAlignmentLists = { {
-					type = "EQUAL",
-					faces =  { }
-				} },
+				terrainAlignmentLists = constructionHelpers.getDummyTerrainAlignmentLists(),
 			}
 			return result
 		end

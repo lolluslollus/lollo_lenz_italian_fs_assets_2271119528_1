@@ -33,6 +33,9 @@ local helpers = {
             faces =  { }
         } }
     end,
+    idTransf = function()
+        return { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1 }
+    end,
 }
 
 return helpers
